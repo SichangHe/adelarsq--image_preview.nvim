@@ -54,7 +54,8 @@ function M.PreviewImage(absolutePath)
             if vim.fn.has('win32') == 1 or vim.fn.has('win64') == 1 then
                 print('Kitty not supported on windows')
             else
-                command = 'silent !kitten @ launch --type=window kitten icat --hold '
+                -- FIXME: Over SSH, this command does work in the terminal, but not in Neovim or Tmux.
+                command = 'silent !kitten @ launch --cwd=current --type=window kitten icat --hold '
                     .. '\''
                     .. absolutePath
                     .. '\''
