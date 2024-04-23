@@ -9,7 +9,7 @@ local function GetFileExtension(url)
 end
 
 local function GetTerm()
-    if os.getenv('KITTY_PID') ~= nil then
+    if os.getenv('KITTY_WINDOW_ID') ~= nil then
         return 'kitty'
     elseif os.getenv('WEZTERM_PANE') ~= nil then
         return 'wezterm'
